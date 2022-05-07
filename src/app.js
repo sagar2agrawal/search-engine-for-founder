@@ -5,6 +5,8 @@ import indexRouter from "../src/components/index/index.routes.js";
 
 const app = express();
 
+app.use(express.json({ limit: '50mb' }));
+
 app.use('/api', indexRouter);
 const port = 5000;
 app.listen(port, () => {
